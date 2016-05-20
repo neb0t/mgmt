@@ -22,3 +22,18 @@
   become_user: root
   roles:
     - nginx
+
+- hosts: mgmt
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - java
+    - maven
+
+- hosts: stat
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - nagios
