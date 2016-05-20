@@ -33,8 +33,6 @@
             dest=/etc/nagios/ansible-managed/{{ item }}
   with_items:
     - webservers.cfg
-    - dbservers.cfg
-    - lbservers.cfg
   notify: restart nagios
 
 - name: start nagios
