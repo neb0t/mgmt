@@ -4,6 +4,7 @@
   get_url:
     url={{ jetty_distributive_url }}
     dest={{ jetty_dir_source }}/{{ jetty_distributive_filename }}
+    checksum='md5:51bd2ad901f634af743b16a2249ad812'
 
 - name: Extract archive
   unarchive: src={{ jetty_dir_source }}/{{ jetty_distributive_filename }}

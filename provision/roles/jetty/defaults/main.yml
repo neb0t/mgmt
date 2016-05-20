@@ -3,7 +3,8 @@
 http_port: 8080
 https_port: 8443
 
-jetty_distributive_url: 'http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.3.8.v20160314.tar.gz&r=1'
+#jetty_distributive_url: 'http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.3.8.v20160314.tar.gz&r=1'
+jetty_distributive_url: 'http://146.185.137.219/jetty-distribution-9.3.8.v20160314.tar.gz'
 jetty_distributive_filename: 'jetty-distribution-9.3.8.v20160314.tar.gz'
 jetty_distributive_folder: 'jetty-distribution-9.3.8.v20160314'
 jetty_dir_source: '/opt'

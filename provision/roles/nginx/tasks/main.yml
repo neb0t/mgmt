@@ -4,3 +4,4 @@
 
 - name: Installs nginx web server
   yum: name=nginx state=present update_cache=true
+  notify: start nginx
