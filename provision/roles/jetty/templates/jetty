@@ -1,0 +1,6 @@
+JAVA_HOME={{ java_home }}
+JETTY_HOME={{ jetty_home }}
+NO_START={{ no_start }}
+JETTY_ARGS={{ jetty_args }}
+JETTY_HOST={{ jetty_host }}
+JETTY_USER={{ jetty_user }}

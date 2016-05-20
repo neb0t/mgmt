@@ -1,0 +1,24 @@
+---
+
+- hosts: all
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - common
+
+- hosts: appservers
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - java
+    - jetty
+
+
+- hosts: webservers
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - nginx

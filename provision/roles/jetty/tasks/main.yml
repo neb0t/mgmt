@@ -1,0 +1,39 @@
+---
+
+- name: Download Jetty 9 from eclipse.org
+  get_url:
+    url={{ jetty_distributive_url }}
+    dest={{ jetty_dir_source }}/{{ jetty_distributive_filename }}
+
+- name: Extract archive
+  unarchive: src={{ jetty_dir_source }}/{{ jetty_distributive_filename }}
+    dest={{ jetty_dir_source }}
+    copy=no
+
+- name: Rename install directory
+  command: chdir={{ jetty_dir_source }} /bin/mv {{ jetty_distributive_folder }} jetty creates={{ jetty_home }}
+
+- name: Copying jetty.xml configuration file
+  template: src=jetty.xml dest={{ jetty_home }}/etc/
+  notify: restart jetty
+
+- name: Add group "jetty"
+  group: name=jetty
+
+- name: Add user "jetty"
+  user: name=jetty group=jetty home={{ jetty_home }}
+
+- name: Copy the jetty to etc/default directory
+  template: src=jetty dest=/etc/default
+
+- name: Copy the init script
+  copy: src=jetty.sh dest=/etc/init.d/jetty mode=0755
+
+- name: Change ownership of Jetty installation
+  file: path={{ jetty_home }} owner=jetty group=jetty state=directory recurse=yes
+
+- name: Enable Jetty to be started at boot
+  service: name=jetty enabled=yes state=started
+
+- name: deploy iptables rules
+  template: src=iptables-save dest=/etc/sysconfig/iptables

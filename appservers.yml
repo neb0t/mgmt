@@ -1,0 +1,7 @@
+---
+# file: appservers.yml
+- hosts: appservers
+  roles:
+    - common
+    - java
+    - jetty

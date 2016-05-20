@@ -1,0 +1,6 @@
+---
+- name: Install EPEL repository
+  yum: name=epel-release state=present
+
+- name: Installs nginx web server
+  yum: name=nginx state=present update_cache=true

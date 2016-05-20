@@ -1,0 +1,13 @@
+---
+- name: Downloading Java 1.8 RPM package
+  get_url:
+    url={{ oracle_java_rpm_url }}
+    dest={{ oracle_java_dir_source }}/{{ oracle_java_rpm_filename }}
+    headers='Cookie:oraclelicense=accept-securebackup-cookie'
+    checksum='md5:967d658352ebd7fac8904fed690856c6'
+
+- name: Installing Java {{ oracle_java_rpm_filename }}
+  yum: name={{ oracle_java_dir_source }}/{{ oracle_java_rpm_filename }} state=present
+
+- name: Clean up
+  file: state=absent path={{ oracle_java_dir_source }}/{{ oracle_java_rpm_filename }}
