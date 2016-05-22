@@ -1,5 +1,5 @@
 ---
-
+# playbook.yml file.
 - hosts: all
   user: vagrant
   become: true
@@ -13,8 +13,9 @@
   become_user: root
   roles:
     - java
+    - maven
     - jetty
-
+    - deploy
 
 - hosts: webservers
   user: vagrant
@@ -22,11 +23,3 @@
   become_user: root
   roles:
     - nginx
-
-- hosts: mgmt
-  user: vagrant
-  become: true
-  become_user: root
-  roles:
-    - java
-    - maven

@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
       node.vm.box_check_update = false
       node.vm.provider "virtualbox" do |vb|
         vb.memory = "512"
+        vb.name = "app#{i}"
       end
     end
   end

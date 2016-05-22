@@ -1,4 +1,4 @@
 ---
 oracle_java_dir_source: '/opt'
 oracle_java_rpm_url: 'http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm'
-oracle_java_rpm_filename: jdk-8u91-linux-x64.rpm
+oracle_java_rpm_filename: 'jdk-8u91-linux-x64.rpm'

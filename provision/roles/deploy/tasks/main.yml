@@ -1,0 +1,11 @@
+---
+
+  - name: Pull sources from the repository.
+    git: repo={{ project_repo }} dest={{ project_root }}/webapp version={{ branch }}
+
+  - name: Package webapp
+    command: bash -c 'cd {{ project_root }}/webapp && /opt/apache-maven-3.3.9/bin/mvn clean install'
+
+  - name: Copy the init to webapps
+    command: bash -c 'cd {{ project_root }}/webapp/target && cp webapp.war {{ webapp_dir }}/ROOT.war && chown -R {{ jetty_user }}:{{ jetty_group }} {{ webapp_dir }}/ROOT.war'
+    notify: restart jetty

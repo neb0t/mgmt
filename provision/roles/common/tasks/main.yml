@@ -9,3 +9,4 @@
     - wget
     - libselinux-python
     - policycoreutils-python
+    - git

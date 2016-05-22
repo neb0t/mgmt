@@ -1,0 +1,8 @@
+---
+
+project_repo: 'https://github.com/neb0t/webapp.git'
+project_root: '/home/vagrant'
+branch: 'master'
+webapp_dir: '/opt/jetty/webapps'
+jetty_user: 'jetty'
+jetty_group: 'jetty'
