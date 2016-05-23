@@ -23,3 +23,10 @@
   become_user: root
   roles:
     - nginx
+
+- hosts: lbservers
+  user: vagrant
+  become: true
+  become_user: root
+  roles:
+    - haproxy

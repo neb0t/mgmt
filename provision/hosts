@@ -1,13 +1,16 @@
+[mgmt]
+mgmt	ansible_ssh_host=10.0.26.101
+
 [appservers]
-10.0.26.201
-10.0.26.202
+app1	ansible_ssh_host=10.0.26.201
+app2	ansible_ssh_host=10.0.26.202
 
 [webservers]
-10.0.26.201
-10.0.26.202
+web1	ansible_ssh_host=10.0.26.201
+web2	ansible_ssh_host=10.0.26.202
 
-[mgmt]
-10.0.26.101
+[lbservers]
+lb1 	ansible_ssh_host=10.0.26.103
 
 [stat]
-10.0.26.102
+stat1	ansible_ssh_host=10.0.26.102

@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
       node.vm.box = "cent0s7"
       node.vm.synced_folder ".", "/vagrant", disabled: true
       node.vm.hostname = "app#{i}"
-      node.vm.network "private_network", ip: "10.0.26.20#{i}"
+      node.vm.network "private_network", ip:"10.0.26.20#{i}"
       node.vm.box_check_update = false
       node.vm.provider "virtualbox" do |vb|
         vb.memory = "512"
@@ -24,6 +24,18 @@ Vagrant.configure(2) do |config|
       stat.vm.provider "virtualbox" do |vb|
         vb.memory = "256"
         vb.name = "stat"
+      end
+  end
+
+  config.vm.define "lb" do |lb|
+      lb.vm.network "private_network", ip:"10.0.26.103"
+      lb.vm.hostname = "lb"
+      lb.vm.box = "cent0s7"
+      lb.vm.synced_folder ".", "/vagrant", disabled: true
+      lb.vm.box_check_update = false
+      lb.vm.provider "virtualbox" do |vb|
+        vb.memory = "256"
+        vb.name = "lb"
       end
   end
 
