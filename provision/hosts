@@ -11,6 +11,3 @@ web2	ansible_ssh_host=10.0.26.202
 
 [lbservers]
 lb1 	ansible_ssh_host=10.0.26.103
-
-[stat]
-stat1	ansible_ssh_host=10.0.26.102

@@ -8,4 +8,4 @@ ls -la /home/vagrant
 export ANSIBLE_HOST_KEY_CHECKING=False
 
 cd /home/vagrant/provision
-ansible-playbook -i hosts playbook.yml -vv
+ansible-playbook playbooks/environment.yml

@@ -1,5 +1,29 @@
-#README
+# Ansible configuration
 
+- [Roles](#roles)
+- [Ansible Playbooks](#ansible-playbooks)
+
+## Roles
+
+Environment roles:
+
+- [common] (roles/common/README.md)
+- [haproxy](roles/balancer/README.md)
+- [deploy](roles/deploy/README.md)
+- [java](roles/java/README.md)
+- [jetty](roles/jetty/README.md)
+- [maven](roles/maven/README.md)
+- [nginx](roles/maven/README.md)
+
+Additional information about role, You can find in README.md file in same folder
+
+## Ansible Playbooks
+
+All playbooks avaible in [playbooks folder](playbooks). Run Playbooks you can follows:
+
+```
+ansible-playbook playbooks/your-role.yml
+```
 #Deploying Java Spring MVC web application via Ansible
 
 #Infrastructure
@@ -15,12 +39,12 @@ Environment should be deployed via `vagrant up` command.
 
 Tools needed for Environment setup:
 
-1. Installed Virtualbox2. 
-2. Installed Ansible (* version) tools
-3. Installed Vagrant (>=2.0 version)
+1. Installed Virtualbox
+2. Installed Ansible (>=2.0.2 version)
+3. Installed Vagrant (>=1.8.1 version)
 
 ## Managment instance
-Ansible (*) version installed
+Ansible (>=2.0.2) version installed
 
 ## Webservers role
 Commons installed;
@@ -31,7 +55,7 @@ Nginx installed;
 Deploy script installed;
 
 ## Monitoring server
-Nagios installed;
+Zabbix installed;
 
 ## Load balancer server
 Haproxy installed;
@@ -40,43 +64,26 @@ Deploy process instruction:
 
 Clone git project to vagrant host.
 
-`git clone https://source.sip.net.ua/neb0t/mgmt.git`
+`https://github.com/neb0t/mgmt.git`
 
-Navigate to the project.
-Run command:
-
-`vagrant up`
-
-
-Local infrastructure opened on Vagrant VirtualBox
+#Local infrastructure opened on Vagrant VirtualBox
 
 OS: CentOS 7
 
-Network: 192.168.22.0/24
+Network: 10.0.26.0/24
 
 ### Hosts
 
 - [ansible]
-    - ansible (192.168.22.10)
-- [balancer] 
-    - balancer (192.168.22.11, +EXT IP)
-- [ci]    
-    - jenkins (192.168.22.12)
+    - ansible (10.0.26.101)
+- [lb] 
+    -haproxy (10.0.26.103)
 - [monitoring]
-    - zabbix (192.168.22.13)
-    - logs (192.168.22.15)
-- repo (192.168.22.14)
+    - zabbix (10.0.26.102)
 - [webapp]
-    - web1 (192.168.22.21)
-    - web2 (192.168.22.22)
-    - web3 (192.168.22.23)
-- [database]    
-    - db1 (192.168.22.31)
-    - db2 (192.168.22.32)
-    - db3 (192.168.22.33)
+    - web1 (10.0.26.201)
+    - web2 (10.0.26.202)
 
 Up/Down all virtual hosts ```vagrant up``` / ```vagrant halt```
 
-Up/Down single virtual host ```vagrant up ansible``` / ```vagrant halt ansible```
-
-
+Up/Down single virtual host ```vagrant up app1``` / ```vagrant halt app1```

@@ -15,18 +15,6 @@ Vagrant.configure(2) do |config|
     end
   end
 
-  config.vm.define "stat" do |stat|
-      stat.vm.network "private_network", ip:"10.0.26.102"
-      stat.vm.hostname = "mgmt"
-      stat.vm.box = "cent0s7"
-      stat.vm.synced_folder ".", "/vagrant", disabled: true
-      stat.vm.box_check_update = false
-      stat.vm.provider "virtualbox" do |vb|
-        vb.memory = "256"
-        vb.name = "stat"
-      end
-  end
-
   config.vm.define "lb" do |lb|
       lb.vm.network "private_network", ip:"10.0.26.103"
       lb.vm.hostname = "lb"
@@ -50,7 +38,7 @@ Vagrant.configure(2) do |config|
         vb.name = "mgmt"
       end
       mgmt.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-      mgmt.vm.provision "file", source: "provision", destination: "/home/vagrant/provision"
+      mgmt.vm.provision "file", source: "provision", destination: "/home/vagrant/"
       mgmt.vm.provision "shell", path: "shell/ansible-setup.sh"
   end
 
