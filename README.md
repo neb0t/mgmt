@@ -7,13 +7,13 @@
 
 Environment roles:
 
-- [common] (roles/common/README.md)
-- [haproxy](roles/balancer/README.md)
-- [deploy](roles/deploy/README.md)
-- [java](roles/java/README.md)
-- [jetty](roles/jetty/README.md)
-- [maven](roles/maven/README.md)
-- [nginx](roles/maven/README.md)
+- [common] (provision/roles/common/README.md)
+- [haproxy](provision/roles/haproxy/README.md)
+- [deploy](provision/roles/deploy/README.md)
+- [java](provision/roles/java/README.md)
+- [jetty](provision/roles/jetty/README.md)
+- [maven](provision/roles/maven/README.md)
+- [nginx](provision/roles/maven/README.md)
 
 Additional information about role, You can find in README.md file in same folder
 
