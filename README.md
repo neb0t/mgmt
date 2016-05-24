@@ -13,7 +13,7 @@ Environment roles:
 - [java](provision/roles/java/README.md)
 - [jetty](provision/roles/jetty/README.md)
 - [maven](provision/roles/maven/README.md)
-- [nginx](provision/roles/maven/README.md)
+- [nginx](provision/roles/nginx/README.md)
 
 Additional information about role, You can find in README.md file in same folder
 
@@ -87,3 +87,21 @@ Network: 10.0.26.0/24
 Up/Down all virtual hosts ```vagrant up``` / ```vagrant halt```
 
 Up/Down single virtual host ```vagrant up app1``` / ```vagrant halt app1```
+
+#Web-pages access
+
+###Application servers
+app1: http://10.0.26.201:8080
+app2: http://10.0.26.202:8080
+
+###Web servers
+web1: http://10.0.26.201
+web2: http://10.0.26.202
+
+###Load balancer server
+lb: http://10.0.26.103
+
+####LB Statistic page
+http://10.0.26.103:8080/stats
+    username: stat
+    password: statpass
