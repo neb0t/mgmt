@@ -92,10 +92,12 @@ Up/Down single virtual host ```vagrant up app1``` / ```vagrant halt app1```
 
 ###Application servers
 app1: http://10.0.26.201:8080
+
 app2: http://10.0.26.202:8080
 
 ###Web servers
 web1: http://10.0.26.201
+
 web2: http://10.0.26.202
 
 ###Load balancer server
@@ -103,5 +105,7 @@ lb: http://10.0.26.103
 
 ####LB Statistic page
 http://10.0.26.103:8080/stats
+
     username: stat
+    
     password: statpass
