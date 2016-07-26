@@ -1,0 +1,14 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: ansible_playbook
+  hosts: test-kitchen
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: default
+  - name: testme
